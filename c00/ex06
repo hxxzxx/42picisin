@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_print_comb2.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heejlee <heejlee@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/11 14:19:00 by heejlee           #+#    #+#             */
+/*   Updated: 2021/10/11 16:22:31 by heejlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+#include <unistd.h>
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+void	ten(int a, int b)
+{
+	ft_putchar(a / 10 + '0');
+	ft_putchar(a % 10 + '0');
+	ft_putchar(' ');
+	ft_putchar(b / 10 + '0');
+	ft_putchar(b % 10 + '0');
+	if (a != 98 || b != 99)
+	{
+		ft_putchar(',');
+		ft_putchar(' ');
+	}
+}
+
+void	ft_print_comb2(void)
+{
+	int	a;
+	int	b;
+
+	a = 0;
+	while (a <= 98)
+	{
+		b = a + 1;
+		while (b <= 99)
+		{
+			ten(a, b);
+			b++;
+		}
+		a++;
+	}
+}
