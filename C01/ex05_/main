@@ -1,0 +1,20 @@
+#include <unistd.h>
+
+void    ft_putstr(char *str)
+{
+    char    pointer;
+
+while (1)
+    {
+pointer = *str;
+if (pointer == '\0')
+{
+break ;
+}
+else
+{
+write(1, &pointer, 1);
+str++;
+}
+    }
+}
