@@ -1,0 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heejlee <heejlee@student.42seoul.k>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/18 14:25:46 by heejlee           #+#    #+#             */
+/*   Updated: 2021/10/18 18:35:15 by heejlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
+{
+	int	len;
+	unsigned int	i;
+
+	len = 0;
+	i = 0;
+	while (src[i] != '\0')
+	{
+		len++;
+		i++;
+	}
+	i = 0;
+	while ( src[i] != '\0' && i < size -1)
+	{
+		dest[i] = src[i];
+		i++ ;
+	}
+	dest[i] = '\0';
+	return (len);
+}
