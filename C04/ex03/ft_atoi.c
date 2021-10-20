@@ -6,14 +6,14 @@
 /*   By: heejlee <heejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 11:31:59 by heejlee           #+#    #+#             */
-/*   Updated: 2021/10/20 12:36:23 by heejlee          ###   ########.fr       */
+/*   Updated: 2021/10/20 12:37:52 by heejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 int	ft_atoi(char *str)
 {
 	int	i;
-	int mi;
-	int res;
+	int	mi;
+	int	res;
 
 	res = 0;
 	i = 0;
@@ -31,3 +31,4 @@ int	ft_atoi(char *str)
 	}
 	return (res * mi);
 }
+ h
