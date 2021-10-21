@@ -1,0 +1,14 @@
+ 12 int ft_iterative_factorial(int nb)
+ 13 {
+ 14     int i;
+ 15 
+ 16     i = nb - 1;
+ 17     if (nb < 0)
+ 18         return (0);
+ 19     while (i >= 1)
+ 20     {
+ 21         nb = nb * i;
+ 22         i--;
+ 23     }
+ 24     return (nb);
+ 25 }
