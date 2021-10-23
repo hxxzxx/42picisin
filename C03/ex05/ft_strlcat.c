@@ -1,34 +1,44 @@
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: heejlee <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/19 23:00:33 by heejlee           #+#    #+#             */
+/*   Updated: 2021/10/23 10:23:28 by heejlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+unsigned int	leng(char *str)
 {
-    unsigned int i;
-    unsigned int j;
-    unsigned int dlen;
-    unsigned int slen;
+	unsigned int	len;
 
-i = 0;
-    j = 0;
-    dlen = 0;
-    slen = 0;
-    while (dest[i] != '\0')
-    {
-dlen++;
-        i++;
-    } 
-while (src[j] != '\0')
-{
-j++;
-slen++;
+	len = 0;
+	while (str[len] != '\0')
+		len++;
+	return (len);
 }
-    while (src[j] != '\0' && j < size - dlen -1)
-    {
-        dest[i] = src[j];
-i++;
-        j++;
-    }
-    dest[i] = '\0';
-    if (size < dlen)
-        return(size + slen); 
-    else
-        return(slen + dlen); 
-    
+
+unsigned	int	ft_strlcat(char *dest, char *src, unsigned int size)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	dlen;
+	unsigned int	slen;
+
+	i = 0;
+	dlen = leng(dest);
+	slen = leng(src);
+	j = dlen;
+	while (src[i] != '\0' && j + 1 < size)
+	{
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	if (size <= dlen)
+		return (size + slen);
+	else
+		return (slen + dlen);
 }
