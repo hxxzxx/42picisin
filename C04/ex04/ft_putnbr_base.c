@@ -6,7 +6,7 @@
 /*   By: heejlee <heejlee@student.42seoul.k>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 12:39:49 by heejlee           #+#    #+#             */
-/*   Updated: 2021/10/23 12:47:10 by heejlee          ###   ########.fr       */
+/*   Updated: 2021/10/23 13:11:08 by heejlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
@@ -15,16 +15,16 @@ void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-void	nbase(int nbr, int i, char *base)
+void	nbase(long int nbr2, int i, char *base)
 {
 	char	a[100];
 	int		j;
 
 	j = 0;
-	while (nbr != 0)
+	while (nbr2 != 0)
 	{
-		a[j] = base[nbr % i];
-		nbr = nbr / i;
+		a[j] = base[nbr2 % i];
+		nbr2 = nbr2 / i;
 		j++;
 	}
 	while (j--)
@@ -51,18 +51,20 @@ int	expbase(int i, char *base)
 
 void	ft_putnbr_base(int nbr, char *base)
 {
-	int	i;
-	int	a;
+	int			i;
+	int			a;
+	long int	nbr2;
 
+	nbr2 = nbr;
 	i = 0;
-	if (nbr < 0)
+	if (nbr2 < 0)
 	{
-		nbr = nbr * (-1);
+		nbr2 = nbr2 * (-1);
 		ft_putchar('-');
 	}
 	while (base[i] != '\0')
 		i++;
 	a = expbase(i, base);
 	if (a == 1)
-		nbase(nbr, i, base);
+		nbase(nbr2, i, base);
 }
