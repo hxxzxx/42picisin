@@ -7,14 +7,14 @@ c = *b;
 *a = c;
 }
 
-voidft_rev_int_tab(int *tab, int size)
+voidft_sort_int_tab(int *tab, int size)
 {
 inti;
 intn;
 
 n = 0;
 i = 0;
-while (n != size - 1)
+while (n != size)
 {
 i = 0;
 while (i != size - 1)
@@ -25,6 +25,7 @@ swap(&tab[i], &tab[i + 1]);
 }
 i++;
 }
-size --;
+n++;
 }
 }
+hee
